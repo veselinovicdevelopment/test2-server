@@ -11,6 +11,14 @@ $(document).ready(function (e) {
 		search();
 	});
 
+	$("#home-link").click(function (e) {
+		e.preventDefault();
+		$('#category').text('Kategorien');
+		$('#available').prop('checked', false);
+		$("#search-text").val("");
+		search();
+	});
+
 	search();
 
 	function search() {
