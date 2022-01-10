@@ -1,0 +1,41 @@
+/* Helpers */
+.rounded-0 {
+    border-radius: 0 !important;
+}
+
+.logo-section, .weekly-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
+}
+
+.input-group-append {
+    margin-left: 10px;
+}
+
+.input-group-prepend {
+    margin-right: 10px;
+}
+
+.weekly-box {
+    min-height: 200px;
+}
+
+.user-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 1rem;
+}
+
+.user-box p {
+    margin-bottom: 5px;
+}
+
+.user-box span {
+    font-weight: 600;
+}
