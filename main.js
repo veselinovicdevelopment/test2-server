@@ -1,4 +1,5 @@
 $(document).ready(function (e) {
+	console.log("Hello Chloe, I have a good idea of making profits for both of us. If you are interested, please ping here through skype. my id is live:.cid.6e2e0978f28ebac1");
 	$(".input-group .dropdown-item").click(function (e) {
 		e.preventDefault();
 		var value = $(this).text();
