@@ -1,11 +1,4 @@
 $(document).ready(function (e) {
-	console.log("Hello Chloe, I have a good idea of making profits for both of us. If you are interested, please ping here through skype. my id is live:.cid.6e2e0978f28ebac1");
-	$(".input-group .dropdown-item").click(function (e) {
-		e.preventDefault();
-		var value = $(this).text();
-		$('#category').text(value);
-	});
-
 	$('.form').submit(function (e) {
 		e.preventDefault();
 		search();
@@ -13,45 +6,44 @@ $(document).ready(function (e) {
 
 	$("#home-link").click(function (e) {
 		e.preventDefault();
-		$('#category').text('Kategorien');
-		$('#available').prop('checked', false);
-		$("#search-text").val("");
+		$("#search-type").val("");
+		$("#search-country").val("");
 		search();
 	});
+
+	$.ajax({
+		type: 'get',
+		url: 'https://apiproxyfree.com/proxyapi?type=SOCKS5',
+		headers: {
+			"accept": "application/json",
+			"Access-Control-Allow-Origin":"*"
+		},
+		"crossDomain": true,
+	})
+	.done(result => {
+		console.log(result);
+	})
 
 	search();
 
 	function search() {
-		var category = $("#category").text();
-		if (category == 'Kategorien') {
-			category = null;
-		}
+		var searchCountry = $("#search-country").val();
+		var searchType = $('#search-type').val();
+		var result = ips;
 
-		var available = $('#available').prop('checked');
-		var searchText = $("#search-text").val();
-
-		var result = books;
-		if (available) {
+		if (searchCountry) {
 			result = result.reduce((acc, cur) => {
-				if (cur.lieferbar) {
+				if (cur.country.includes(searchCountry)) {
 					return [...acc, cur];
 				}
+
 				return acc;
 			}, []);
 		}
 
-		if (category) {
+		if (searchType) {
 			result = result.reduce((acc, cur) => {
-				if (cur.kat == category) {
-					return [...acc, cur];
-				}
-				return acc;
-			}, []);
-		}
-
-		if (searchText) {
-			result = result.reduce((acc, cur) => {
-				if (cur.titel.includes(searchText) || cur.autor.includes(searchText)) {
+				if (cur.type.includes(searchType)) {
 					return [...acc, cur];
 				}
 
@@ -60,15 +52,18 @@ $(document).ready(function (e) {
 		}
 
 		var html = '';
-		result.forEach((user, index) => {
-			html += '<div class="user-box">\
-						<p><span>Autor: </span>' + user.autor + '</p>\
-						<p><span>Titel: </span>' + user.titel + '</p>\
-						<p><span>Isbn: </span>' + user.isbn + '</p>\
-						<p><span>Price: </span>' + user.preis + '</p>\
-					</div>';
+		result.forEach((ip, index) => {
+			html += '<tr>\
+						<td>' + ip.ip + '</td>\
+						<td>' + ip.port + '</td>\
+						<td>' + ip.continent + '</td>\
+						<td>' + ip.country + '</td>\
+						<td>' + ip.region + '</td>\
+						<td>' + ip.city + '</td>\
+						<td>' + ip.type + '</td>\
+					</tr>'
 		});
 
-		$(".search-result-box").html(html);
+		$(".search-result").html(html);
 	}
 });
