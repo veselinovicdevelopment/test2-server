@@ -28,15 +28,34 @@
           </nav>
           <form class="form" action="#" method="get">
             <div class="d-flex">
-              <div class="input-group mb-3 mr-4">
-                <label for="search-text" class="mb-0 mr-2 mt-1">Country</label>
-                <input type="text" class="form-control rounded-0" id="search-country" aria-label="Text input with dropdown button"
-                  >
+              <div class="input-group mb-3 w-auto mr-2">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary dropdown-toggle rounded-0" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    id="country">Country</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">United States</a>
+                    <a class="dropdown-item" href="#">Hong Kong</a>
+                    <a class="dropdown-item" href="#">Japan</a>
+                    <a class="dropdown-item" href="#">Ukraine</a>
+                    <a class="dropdown-item" href="#">Germany</a>
+                    <a class="dropdown-item" href="#">China</a>
+                    <a class="dropdown-item" href="#">Singapore</a>
+                    <a class="dropdown-item" href="#">Colombia</a>
+                    <a class="dropdown-item" href="#">France</a>
+                  </div>
+                </div>
               </div>
-              <div class="input-group mb-3">
-                <label for="search-text" class="mb-0 mr-2 mt-1">Type</label>
-                <input type="text" class="form-control" id="search-type" aria-label="Text input with dropdown button"
-                  >
+              <div class="input-group mb-3 w-auto">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary dropdown-toggle rounded-0" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    id="types">Types</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">SOCKS5</a>
+                    <a class="dropdown-item" href="#">SOCKS4</a>
+                  </div>
+                </div>
                 <div class="input-group-append">
                   <button type="submit" class="btn btn-outline-secondary rounded-0" id="search-btn"><i
                       class="fa fa-search"></i></button>

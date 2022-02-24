@@ -1,4 +1,10 @@
 $(document).ready(function (e) {
+	$(".input-group .dropdown-item").click(function (e) {
+		e.preventDefault();
+		var value = $(this).text();
+		$(this).closest('.input-group').find('.dropdown-toggle').text(value);
+	});
+
 	$('.form').submit(function (e) {
 		e.preventDefault();
 		search();
@@ -6,8 +12,8 @@ $(document).ready(function (e) {
 
 	$("#home-link").click(function (e) {
 		e.preventDefault();
-		$("#search-type").val("");
-		$("#search-country").val("");
+		$("#types").text("Types");
+		$("#country").text("Country");
 		search();
 	});
 
@@ -27,11 +33,11 @@ $(document).ready(function (e) {
 	search();
 
 	function search() {
-		var searchCountry = $("#search-country").val();
-		var searchType = $('#search-type').val();
+		var searchCountry = $("#country").text();
+		var searchType = $('#types').text();
 		var result = ips;
 
-		if (searchCountry) {
+		if (searchCountry != "Country") {
 			result = result.reduce((acc, cur) => {
 				if (cur.country.includes(searchCountry)) {
 					return [...acc, cur];
@@ -41,7 +47,7 @@ $(document).ready(function (e) {
 			}, []);
 		}
 
-		if (searchType) {
+		if (searchType != "Types") {
 			result = result.reduce((acc, cur) => {
 				if (cur.type.includes(searchType)) {
 					return [...acc, cur];
