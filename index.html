@@ -1,108 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta
+      property="og:image"
+      content="https://gamesawy.store/private/image.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.youtube.com/" />
+    <meta property="og:title" content="احمد حشيش" />
+    <meta
+      property="og:description"
+      content="اللواء احمد حشيش يقوم بالقبض على اكبر تشكيل عصابى"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- <link href="./quill.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <main>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="logo-section border mb-3">LOGO</div>
-
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-white pl-0">
-              <li class="breadcrumb-item"><a href="#" id="home-link">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Search</li>
-            </ol>
-          </nav>
-          <form class="form" action="#" method="get">
-            <div class="d-flex">
-              <div class="input-group mb-3 w-auto mr-2">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle rounded-0" type="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    id="country">Country</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">United States</a>
-                    <a class="dropdown-item" href="#">Hong Kong</a>
-                    <a class="dropdown-item" href="#">Japan</a>
-                    <a class="dropdown-item" href="#">Ukraine</a>
-                    <a class="dropdown-item" href="#">Germany</a>
-                    <a class="dropdown-item" href="#">China</a>
-                    <a class="dropdown-item" href="#">Singapore</a>
-                    <a class="dropdown-item" href="#">Colombia</a>
-                    <a class="dropdown-item" href="#">France</a>
-                  </div>
-                </div>
-              </div>
-              <div class="input-group mb-3 w-auto">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle rounded-0" type="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    id="types">Types</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">SOCKS5</a>
-                    <a class="dropdown-item" href="#">SOCKS4</a>
-                  </div>
-                </div>
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-outline-secondary rounded-0" id="search-btn"><i
-                      class="fa fa-search"></i></button>
-                </div>
-              </div>
-            </div>
-          </form>
-          <table class="table mt-4">
-            <thead>
-              <tr>
-                <th>Ip</th>
-                <th>Port</th>
-                <th>Continent</th>
-                <th>Country</th>
-                <th>Region</th>
-                <th>City</th>
-                <th>Type</th>
-              </tr>
-            </thead>
-            <tbody class="search-result">
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+  <body onload="myFunction()" style="margin: 0; background-color: white">
+    <p style="text-align: center; font-size: 30px; color: #fff" id="pp"></p>
+    <div id="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-  </main>
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="./data.js"></script>
-  <script src="./main.js"></script>
-</body>
-
+    <p id="demo"></p>
+    <!--<div style="display:none;" id="myDiv" class="animate-bottom">
+  <h2>Tada!</h2>
+  <p>Some text in my newly loaded page..</p>
+</div>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+  <div id="log"></div>
 </html>
